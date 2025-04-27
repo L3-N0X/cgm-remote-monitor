@@ -78,7 +78,7 @@ jobs:
 
       # Build and push dev images
       - name: Build, tag and push the dev Docker image
-        if: success() && github.ref == 'refs/heads/dev'
+        if: success() && github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/vite-migration'
         uses: docker/build-push-action@v2
         with:
           context: .
